@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/odin-lined.png" type="image/x-icon" width="32" height="32"
+        style="background-color: darkgreen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="./css/script.js" defer></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Sign Up Form</title>
+</head>
+
+<body>
+    <div class="page_container">
+        <aside class="item_1">
+            <div>
+                <img src="./images/odin-lined.png" alt="" width="60" height="60">
+                <div class="logo-text">ODIN</div>
+            </div>
+            <h1>Forge Your Path with purpose</h1>
+        </aside>
+        <main class="form item_2">
+            <div class="wrapper">
+                <div class="content">
+                    <div class="shield">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="48"
+                            height="48"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path
+                                d="M256 49.4L73 127c-5.9 2.5-9.1 7.8-9 12.8c.5 91.4 38.4 249.3 186.4 320.1c3.6 1.7 7.8 1.7 11.3 0C409.7 389 447.6 231.2 448 139.7c0-5-3.1-10.2-9-12.8L256 49.4zM269.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0s9.2 1 13.4 2.9z"
+                                fill="#eee" />
+                        </svg>
+                    </div>
+                    <h2>
+                        Let's get started - Join Odin!
+                    </h2>
+                </div>
+                <form action="" method="post" class="sign-up-form" id="sign-up-form">
+                    <div>
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="" required>
+                    </div>
+                    <div>
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="" required>
+                    </div>
+                    <div class="email-wrapper">
+                        <label for="email">email</label>
+                        <input type="email" id="email" name="email" placeholder="" required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="" required>
+                    </div>
+                    <div>
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="" required>
+                    </div>
+                    <div class="password_match">
+                        <input type="checkbox" id="password_match" name="password_match" required>
+                        <label for="password_match">Passwords match</label>
+                    </div>
+                </form>
+                </fieldset>
+                <div class="submit">
+                    <button class="submit-button" type="submit" name="submit" value="submit" form="sign-up-form">Create
+                        Account
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="25"
+                                height="25"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path
+                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                                    fill="#0e2a1b;" />
+                            </svg>
+                        </span>
+                    </button>
+                    <p>Already have an account?<a href="#"> Login in</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
