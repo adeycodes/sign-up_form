@@ -1,36 +1,63 @@
-// //FORM VALIDATION
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("sign-up-form");
+  const password = document.getElementById("password");
+  const confirmPassword = document.getElementById("confirm_password");
+  const passwordMatch = document.getElementById("password_match");
 
-// const form = document.getElementById("sign_up_form");
-// const f_name = form.elements["first_name"].value;
-// const l_name = form.elements["last_name"].value;
-// const email = form.elements["email"].value;
-// const password = form.elements["password"].value;
-// const confirmPassword = form.elements["confirm_password"].value;
-// const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Function to validate the form
+  function validateForm() {
+    let isValid = true;
 
-// form.addEventListener("submit", function (event) {
-// function validateForm() {
-//   return re.test(String(email).toLowerCase());
+    // Password validation
+    if (password.value !== confirmPassword.value) {
+      passwordMatch.checked = false;
+      isValid = false;
+      alert("Passwords do not match!");
+    } else {
+      passwordMatch.checked = true;
+    }
 
-//   const validateEmail = (email) => {};
+    return isValid;
+  }
 
-//   if (
-//     f_name === "" ||
-//     l_name === "" ||
-//     email === "" ||
-//     password === "" ||
-//     confirmPassword === ""
-//   ) {
-//     alert("All fields are required.");
-//     return false;
-//   }
+  // Function to save form data to local storage
+  function saveFormData() {
+    const formData = new FormData(form);
+    const formValues = {};
+    for (const [key, value] of formData.entries()) {
+      formValues[key] = value;
+    }
+    localStorage.setItem("signUpFormData", JSON.stringify(formValues));
+  }
 
-//   if (!validateEmail(email)) {
-//     alert("Please enter a valid email address.");
-//     return false;
-//   }
+  // Function to display submission dialog
+  function showSubmissionDialog() {
+    alert("Form submitted successfully!");
+  }
 
-//   return true;
-// }
+  // Form submission event listener
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
 
-// //FORM COLLECTION AND STORAGE
+    if (validateForm()) {
+      saveFormData();
+      showSubmissionDialog();
+      form.reset(); // Clear the form
+    }
+  });
+
+  // Load saved form data on page load
+  function loadFormData() {
+    const savedData = localStorage.getItem("signUpFormData");
+    if (savedData) {
+      const formData = JSON.parse(savedData);
+      for (const key in formData) {
+        if (form.elements[key]) {
+          form.elements[key].value = formData[key];
+        }
+      }
+    }
+  }
+
+  loadFormData();
+});
